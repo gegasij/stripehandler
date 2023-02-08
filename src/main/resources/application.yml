@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/payment
+    password: root
+    username: postgres
+  jpa:
+    properties:
+      hibernate:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
