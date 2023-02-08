@@ -12,10 +12,12 @@
     <artifactId>stripehandler</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>stripehandler</name>
+    <packaging>war</packaging>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
+        <server.destination>/opt/jetty/demo-base/webapps</server.destination>
     </properties>
     <dependencies>
         <dependency>
@@ -85,6 +87,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <outputDirectory>{}</outputDirectory>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
