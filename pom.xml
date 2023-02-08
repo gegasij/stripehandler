@@ -88,6 +88,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <outputDirectory>${server.destination}</outputDirectory>
+                    <outputFile>stripeHandler</outputFile>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
