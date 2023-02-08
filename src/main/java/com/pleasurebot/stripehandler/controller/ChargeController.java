@@ -2,6 +2,7 @@ package com.pleasurebot.stripehandler.controller;
 
 import com.pleasurebot.stripehandler.service.ChargeHandler;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,8 +15,8 @@ public class ChargeController {
     private final ChargeHandler chargeHandler;
 
     @PostMapping("/succeeded")
-    public String succeeded(@RequestBody String requestBody) {
-        return chargeHandler.succeeded(requestBody);
+    public ResponseEntity<String> succeeded(@RequestBody String requestBody) {
+        return ResponseEntity.ok(chargeHandler.succeeded(requestBody));
     }
 
     @PostMapping("/failed")

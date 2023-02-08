@@ -21,7 +21,7 @@ public class ChargeHandler {
             event = gson.fromJson(json, Event.class);
         } catch (JsonSyntaxException e) {
             // Invalid payload
-            return "";
+            return "Not an Event Object";
         }
 
         // With signature verification:

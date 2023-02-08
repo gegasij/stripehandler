@@ -14,7 +14,7 @@ public class Charge {
     @Id
     private String id;
 
-    private Integer amount;
+    private Long amount;
     private String email;
     private String phone;
     private String name;

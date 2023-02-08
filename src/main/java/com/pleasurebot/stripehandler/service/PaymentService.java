@@ -16,9 +16,9 @@ public class PaymentService {
     private final ChargeRepository chargeRepository;
 
     public void handlePayment(Charge charge){
-        val internCustomer = CustomerMapper.fromStripeCustomer(charge.getCustomerObject());
+        //val internCustomer = CustomerMapper.fromStripeCustomer(charge.getCustomerObject());
         val internCharge = ChargeMapper.fromStripeCharge(charge);
-        customerRepository.save(internCustomer);
+        //customerRepository.save(internCustomer);
         chargeRepository.save(internCharge);
     }
 

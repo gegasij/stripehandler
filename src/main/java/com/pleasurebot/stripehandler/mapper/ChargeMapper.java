@@ -8,9 +8,10 @@ public class ChargeMapper {
     public Charge fromStripeCharge(com.stripe.model.Charge charge) {
         return Charge.builder()
                 .id(charge.getId())
-                .phone(charge.getCustomerObject().getPhone())
-                .email(charge.getCustomerObject().getEmail())
-                .name(charge.getCustomerObject().getName())
+                .amount(charge.getAmount())
+                .phone(charge.getBillingDetails().getPhone())
+                .email(charge.getBillingDetails().getEmail())
+                .name(charge.getBillingDetails().getName())
                 .build();
     }
 }
