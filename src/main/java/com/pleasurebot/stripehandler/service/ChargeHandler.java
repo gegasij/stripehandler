@@ -27,7 +27,7 @@ public class ChargeHandler {
         // With signature verification:
         System.out.println(event.getId());
         System.out.println(event.getType());
-        System.out.println(event.getData().getObject().getClass());
+        System.out.println(event.getData().getClass());
 
         // Deserialize the nested object inside the event.
         EventDataObjectDeserializer dataObjectDeserializer = event.getDataObjectDeserializer();
