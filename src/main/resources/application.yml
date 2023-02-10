@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/dev
+    url: jdbc:postgresql://35.176.106.181:5432/dev
     password: root
     username: postgres
   jpa:
@@ -27,7 +27,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/dev
+    url: jdbc:postgresql://35.176.106.181:5432/dev
 
 ---
 spring:
@@ -35,7 +35,7 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/prod
+    url: jdbc:postgresql://35.176.106.181:5432/prod
   jpa:
     hibernate:
       ddl-auto: validate
