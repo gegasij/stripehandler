@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/payment
+    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/dev
     password: root
     username: postgres
   jpa:
@@ -9,6 +9,33 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  profiles:
+    active: dev
 server:
   servlet:
     context-path: /stripe-handler
+  port: 8081
+logging:
+  file:
+    name: log.txt
+    path: /logs
+  level:
+    com.pleasurebot.core: debug
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://ec2-13-42-30-187.eu-west-2.compute.amazonaws.com:5432/prod
+  jpa:
+    hibernate:
+      ddl-auto: validate
